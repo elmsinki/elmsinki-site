@@ -24,6 +24,7 @@
 
 a {
   color: var(--blue-accent);
+  display: inline-block;
 }
 
 a:hover,
@@ -60,4 +61,5 @@ small,
 body {
   max-width: 40em;
   margin: auto;
+  padding: 2em 0;
 }

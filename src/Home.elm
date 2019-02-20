@@ -1,24 +1,65 @@
-module Home exposing (view)
+module Home exposing (main, view)
 
 import Accessibility exposing (..)
 import Html as H
-import Html.Attributes as HA
+import Html.Attributes exposing (..)
+import Markdown
+
+
+main =
+    view
+
+
+ingress : Markdown
+ingress =
+    Markdown """
+
+Elmsinki is the Helsinki Elm Meetup.
+[Elm](https://elm-lang.org) is a delightful language for building reliable webapps.
+
+We welcome everyone in the meetups. There is no need to know Elm, we only expect you to be willing to learn!
+
+"""
+
+
+missionStatement : Markdown
+missionStatement =
+    Markdown """
+
+## Mission statement
+
+We want to foster a welcoming and inclusive community of people who like to learn Elm, work with Elm or help others learn Elm.
+
+"""
 
 
 view : Html msg
 view =
+    document
+        { title = "Elmsinki - the Helsinki Elm Meetup"
+        , content =
+            h1 [] [ text "Elmsinki" ]
+                :: List.map sectionFromMarkdown [ ingress, missionStatement ]
+        }
+
+
+type Markdown
+    = Markdown String
+
+
+sectionFromMarkdown : Markdown -> Html msg
+sectionFromMarkdown (Markdown mdString) =
+    section [] (Markdown.toHtml Nothing mdString)
+
+
+document : { title : String, content : List (Html msg) } -> Html msg
+document { title, content } =
     H.node "html"
-        [ HA.lang "EN" ]
+        [ lang "EN" ]
         [ H.node "head"
             []
-            [ H.node "title" [] [ text "Elmsinki - the Helsinki Elm Meetup" ]
-            , H.node "link" [ HA.rel "stylesheet", HA.href "style.css" ] []
+            [ H.node "title" [] [ text title ]
+            , H.node "link" [ rel "stylesheet", href "style.css" ] []
             ]
-        , H.node "body"
-            []
-            [ main_ []
-                [ h1 [] [ text "Elmsinki" ]
-                , p [] [ text "Hello, this is website." ]
-                ]
-            ]
+        , H.node "body" [] [ main_ [] content ]
         ]
