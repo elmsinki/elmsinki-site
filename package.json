@@ -1,0 +1,11 @@
+{
+  "name": "elmsinki-site",
+  "version": "1.0.0",
+  "license": "BSD-3-clause",
+  "devDependencies": {
+    "static-html-from-elm": "^1.0.3"
+  },
+  "scripts": {
+    "build": "npx static-html-from-elm --config elm-static-html.json"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "files": {
+    "src/Home.elm": {
+      "output": "index.html",
+      "viewFunction": "view"
+    }
+  }
+}

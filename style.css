@@ -1,0 +1,63 @@
+:root {
+  font-size: 16pt;
+  --blue-accent: #2965c7;
+  --fuchsia-accent: #e03ecf;
+  --orange1: #faf4ec;
+  --text-color: #2f2e2b;
+  /* Perfect fourth type scale */
+  --h1: 4.209em;
+  --h2: 3.157em;
+  --h3: 2.369em;
+  --h4: 1.777em;
+  --h5: 1.333em;
+  --small: 0.75em;
+  background-color: var(--orange1);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--blue-accent);
+}
+
+a:hover,
+a:focus {
+  color: var(--fuchsia-accent);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+small,
+.text-small {
+  font-size: var(--small);
+}
+
+body {
+  max-width: 40em;
+  margin: auto;
+}
