@@ -3,14 +3,9 @@
   "version": "1.0.0",
   "license": "BSD-3-clause",
   "devDependencies": {
-    "microbundle": "^0.9.0",
     "static-html-from-elm": "^1.0.3"
   },
   "scripts": {
-    "build": "npx static-html-from-elm --config elm-static-html.json",
-    "build:js": "microbundle build --entry scripts/index.js --output dist/index.js --format iife --external none && cp scripts/css-paint-polyfill.js dist/ && cp scripts/paint.js dist/"
-  },
-  "dependencies": {
-    "css-paint-polyfill": "^1.0.3"
+    "build": "npx static-html-from-elm --config elm-static-html.json"
   }
 }
