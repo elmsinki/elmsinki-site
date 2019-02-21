@@ -1,8 +1,4 @@
-/* This project is under construction. It's not ready for release yet. As of Feb 11, 2019. */
-
-* {
-  box-sizing: border-box;
-} /* Switch to border-box for box-sizing. */
+/** Basic browser-default adjustments */
 
 /* Immediately jump any animation to the end point if the user has set their device to "prefers reduced motion". */
 /* This could create bad, unintended consequences. Remove as needed, and write your own appropriate code for prefers-reduced-motion. */
@@ -17,54 +13,6 @@ body {
   margin: 0; /* Remove the tiny space around the edge of the page */
 }
 
-/* Switch to using rem units for typography. Fix line-height on headlines. */
-h1 {
-  font-size: 2rem; /* Make all H1 large, remove nested-shrinking sizes. */
-  margin: 0.67em 0;
-}
-h2 {
-  font-size: 1.5rem;
-}
-h3 {
-  font-size: 1.17rem;
-}
-h4 {
-  font-size: 1rem;
-}
-h5 {
-  font-size: 0.83rem;
-}
-h6 {
-  font-size: 0.67rem;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.25;
-}
-
-/* Improve readability */
-p {
-  line-height: 1.5;
-}
-
-pre {
-  white-space: pre-wrap; /* Overflow by default is bad. */
-}
-
-hr {
-  border: 0.5px solid;
-}
-
-/* Are browsers now consistent with margin & padding on lists?
-  See: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Consistent_list_indentation  */
-nav ul {
-  list-style: none;
-}
-
 img,
 video,
 canvas,
@@ -75,78 +23,64 @@ object {
   display: block; /* Switch display mode to block, since that's what we usually want for images. */
   vertical-align: middle; /* If you override, and make an image inline, it's likely you'll want middle vertical alignment. */
 }
+
 img,
 video {
   max-width: 100%; /* Make images and video flexible by default. */
   height: auto; /* Ensure images and video maintain their aspect ratio when max-width comes into play. */
 }
+
 img {
   border-style: none; /* Remove the border on images inside links in IE 10 and earlier. */
 }
 
-/* Support upcoming properties that haven't been broadly implemented yet,
-   but for which the initial value and legacy behavior is not be the best behavior.
-*/
-
-/* Consistent line spacing, which does not unnecessarily grow to accommodate things that would fit anyway */
-/* From CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property */
-:root {
-  line-sizing: normal;
-}
-
-/* Improve spacing of punctuation marks and at script changes in CJK languages */
-/* From CSS Text Module Level 4: https://drafts.csswg.org/css-text-4/#text-spacing-property */
-:root {
-  text-spacing: trim-start allow-end trim-adjacent ideograph-alpha
-    ideograph-numeric;
-}
-
 /* Font-face */
+/* TODO: Remove unused ones */
 @font-face {
-  font-family: "Goiters";
+  font-family: 'Goiters';
   font-style: normal;
   font-weight: 900;
-  src: url("/fonts/Goiters0.2-Black.woff2") format("woff2");
+  src: url('/fonts/Goiters0.2-Black.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Goiters";
+  font-family: 'Goiters';
   font-style: normal;
   font-weight: 800;
-  src: url("/fonts/Goiters0.2-ExtraBold.woff2") format("woff2");
+  src: url('/fonts/Goiters0.2-ExtraBold.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Goiters";
+  font-family: 'Goiters';
   font-style: normal;
   font-weight: 700;
-  src: url("/fonts/Goiters0.2-Bold.woff2") format("woff2");
+  src: url('/fonts/Goiters0.2-Bold.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Goiters";
+  font-family: 'Goiters';
   font-style: normal;
   font-weight: 600;
-  src: url("/fonts/Goiters0.2-SemiBold.woff2") format("woff2");
+  src: url('/fonts/Goiters0.2-SemiBold.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Goiters";
+  font-family: 'Goiters';
   font-style: normal;
   font-weight: 500;
-  src: url("/fonts/Goiters0.2-Medium.woff2") format("woff2");
+  src: url('/fonts/Goiters0.2-Medium.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Goiters";
+  font-family: 'Goiters';
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/Goiters0.2-Regular.woff2") format("woff2");
+  src: url('/fonts/Goiters0.2-Regular.woff2') format('woff2');
 }
 @font-face {
-  font-family: "Goiters";
+  font-family: 'Goiters';
   font-style: normal;
   font-weight: 300;
-  src: url("/fonts/Goiters0.2-Light.woff2") format("woff2");
+  src: url('/fonts/Goiters0.2-Light.woff2') format('woff2');
 }
 
 :root {
-  font-size: 16pt;
+  font-size: 16px;
   --blue-accent: #2965c7;
   --fuchsia-accent: #e03ecf;
   --orange1: #faf4ec;
@@ -157,11 +91,12 @@ img {
   --h3: 2.369em;
   --h4: 1.777em;
   --h5: 1.333em;
+  --text: 1.333em;
   --small: 0.75em;
   background-color: var(--orange1);
   color: var(--text-color);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 *,
@@ -201,21 +136,27 @@ h5 {
   font-size: var(--h5);
 }
 
+p {
+  font-size: var(--text);
+}
+
 small,
 .text-small {
   font-size: var(--small);
 }
 
 body {
-  max-width: 40em;
+  max-width: 48em;
   margin: auto;
   padding: 2em 0;
 }
 
+/* Line height */
 p {
   line-height: 1.5;
 }
 
+h1,
 h2,
 h3,
 h4,
@@ -224,30 +165,32 @@ h6 {
   line-height: 1.25;
 }
 
+/* Normalise font-weight */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: 'Goiters';
+}
+
+/* Section spacing */
+/* TODO: Discuss */
+section + section {
+  margin-top: 4rem;
+}
+
+h2 {
+  margin-bottom: 2rem;
+}
+
 .headline {
   margin-top: 2rem;
   margin-bottom: 4rem;
-  font-family: "Goiters", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Goiters', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 900;
   text-align: center;
-}
-
-/* Rough paint */
-.paint {
-  background: var(--rough-fill);
-  border: var(--rough-stroke-width) solid var(--rough-stroke);
-  --rough-fill: var(--orange1);
-  --rough-stroke: var(--blue-accent);
-  --rough-stroke-width: 4px;
-  --rough-roughness: 6;
-}
-
-@supports (border-image-source: paint(rough-boxes)) {
-  .is-loaded .paint {
-    border-image-source: paint(rough-boxes);
-    border-image-slice: 0 fill;
-    border-image-outset: 10px;
-    background: none;
-  }
 }
