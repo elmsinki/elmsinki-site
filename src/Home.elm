@@ -38,7 +38,7 @@ view =
     document
         { title = "Elmsinki - the Helsinki Elm Meetup"
         , content =
-            h1 [] [ text "Elmsinki" ]
+            h1 [class "headline"] [ text "Elmsinki" ]
                 :: List.map sectionFromMarkdown [ ingress, missionStatement ]
         }
 
