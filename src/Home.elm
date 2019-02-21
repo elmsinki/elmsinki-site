@@ -33,13 +33,24 @@ We want to foster a welcoming and inclusive community of people who like to lear
 """
 
 
+codeOfConduct : Markdown
+codeOfConduct =
+    Markdown """
+
+## Code of Conduct
+
+We want to foster a welcoming and inclusive community of people who like to learn Elm, work with Elm or help others learn Elm.
+
+"""
+
+
 view : Html msg
 view =
     document
         { title = "Elmsinki - the Helsinki Elm Meetup"
         , content =
             h1 [ class "headline" ] [ text "Elmsinki" ]
-                :: List.map sectionFromMarkdown [ ingress, missionStatement ]
+                :: List.map sectionFromMarkdown [ ingress, missionStatement, codeOfConduct ]
         }
 
 
@@ -55,7 +66,7 @@ sectionFromMarkdown (Markdown mdString) =
 document : { title : String, content : List (Html msg) } -> Html msg
 document { title, content } =
     H.node "html"
-        [ lang "EN" ]
+        [ lang "en-us" ]
         [ H.node "head"
             []
             [ H.node "title" [] [ text title ]
