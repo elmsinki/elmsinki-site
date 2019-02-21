@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "npx static-html-from-elm --config elm-static-html.json",
-    "build:js": "microbundle build --entry scripts/index.js --output dist/index.js --format es --external none && cp scripts/paint.js dist/"
+    "build:js": "microbundle build --entry scripts/index.js --output dist/index.js --format iife --external none && cp scripts/css-paint-polyfill.js dist/ && cp scripts/paint.js dist/"
   },
   "dependencies": {
     "css-paint-polyfill": "^1.0.3"
