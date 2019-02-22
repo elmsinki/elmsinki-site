@@ -25,7 +25,7 @@ To build for production, run:
 npm run build
 ```
 
-The built site will be available under the `dist/` folder.
+The built site will be available under the root folder.
 
 ## Structure
 
