@@ -15,7 +15,7 @@
     "build:prepare": "rimraf dist/ && mkdir dist",
     "build:copy-assets": "cp -r asset/ dist/",
     "build:styles": "cp style.css dist/",
-    "build:html": "npx static-html-from-elm --config elm-static-html.json",
+    "build:html": "static-html-from-elm --config elm-static-html.json",
     "watch": "chokidar \"src/*.elm|style.css\" --command \"npm run build:html && npm run build:styles\" --initial",
     "serve": "serve --listen 8080"
   }
