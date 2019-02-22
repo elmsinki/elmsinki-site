@@ -33,6 +33,15 @@ We want to foster a welcoming and inclusive community of people who like to lear
 """
 
 
+contactInfo : Markdown
+contactInfo =
+    Markdown """
+
+## Contact Info
+
+"""
+
+
 codeOfConduct : Markdown
 codeOfConduct =
     Markdown """
@@ -50,7 +59,7 @@ view =
         { title = "Elmsinki - the Helsinki Elm Meetup"
         , content =
             h1 [ class "headline" ] [ text "Elmsinki" ]
-                :: List.map sectionFromMarkdown [ ingress, missionStatement, codeOfConduct ]
+                :: List.map sectionFromMarkdown [ ingress, missionStatement, codeOfConduct, contactInfo ]
         }
 
 
