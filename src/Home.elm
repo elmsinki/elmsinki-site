@@ -39,8 +39,8 @@ the barrier of entry as low as possible, and as such, welcome presentations that
     - Show an article/blog post/idea you've come across (e.g. 5 minutes)
     - Show your code: quickly explain what you've built by showing the end result and a little bit of code
     - Inverted talk: pull up a chair and have the "panel" in front of you answer tricky questions
-    - Tell what you are working on -- in your own words, no slides or preparation necessary
-    - Slide-deck talk -- these are welcome too!
+    - Tell what you are working on — in your own words, no slides or preparation necessary
+    - Slide-deck talk — these are welcome too!
 
 
 In a nutshell collaboration, coding, and feeling part of a group is the main focus of these events.
