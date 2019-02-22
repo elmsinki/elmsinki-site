@@ -162,8 +162,9 @@ small,
 
 body {
   max-width: 48em;
-  margin: auto;
-  padding: 2rem 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 8rem;
 }
 
 /* Section spacing */
@@ -176,7 +177,8 @@ p {
   hyphens: auto;
 }
 
-ul li + li {
+/* Inter-line-item spacing */
+li {
   margin-top: 0.5em;
 }
 
@@ -184,7 +186,6 @@ ul li + li {
   margin-top: 4rem;
   margin-bottom: 8rem;
   font-weight: 900;
-  text-align: center;
 }
 
 .organizers-list {
