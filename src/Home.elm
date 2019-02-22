@@ -74,11 +74,9 @@ We expect participants to follow these rules at all meetup venues and other Elms
 
 If an incident occurs please use the following contact information.
 
-**Ossi Hanhinen:**
-ohanhi on [Elm Slack](https://elm-lang.slack.com/), [@ohanhi](https://twitter.com/ohanhi) on Twitter
+**Ossi Hanhinen:** [ossi.hanhinen@gmail.com](mailto:ossi.hanhinen@gmail.com)
 
-**Fotis Papadogeorgopoulos:**
-fpapado on [Elm Slack](https://elm-lang.slack.com/), [@isfotis](https://twitter.com/isfotis) on Twitter
+**Fotis Papadogeorgopoulos:** [fgpapado@gmail.com](mailto:fgpapado@gmail.com)
 
 
 
@@ -90,13 +88,15 @@ _Adapted from [the Strange Loop Code of Conduct](https://www.thestrangeloop.com/
 organizers =
     [ { name = "Ossi Hanhinen"
       , twitter = "ohanhi"
+      , github = "ohanhi"
       , elmSlack = "ohanhi"
-      , image = "https://placekitten.com/300/300"
+      , image = "ossi.jpg"
       }
     , { name = "Fotis Papadogeorgopoulos"
       , twitter = "isfotis"
+      , github = "fpapado"
       , elmSlack = "fpapado"
-      , image = "https://placekitten.com/g/300/300"
+      , image = "fotis.jpg"
       }
     ]
 
@@ -121,11 +121,20 @@ sectionFromOrganizers =
 
 organizerView organizer =
     article [ class "organizer" ]
-        [ decorativeImg [ src organizer.image ]
+        [ decorativeImg [ src ("asset/" ++ organizer.image), class "organizer-image" ]
         , h4 [] [ text organizer.name ]
-        , ul []
-            [ li [] [ text "Twitter:", text organizer.twitter ]
-            , li [] [ text "Elm Slack:", text organizer.elmSlack ]
+        , table [ class "organizer-table" ]
+            [ tbody []
+                [ tr []
+                    [ th [] [ text "Twitter" ]
+                    , td [] [ a [ href ("https://twitter.com/" ++ organizer.twitter) ] [ text organizer.twitter ] ]
+                    ]
+                , tr []
+                    [ th [] [ text "GitHub" ]
+                    , td [] [ a [ href ("https://github.com/" ++ organizer.github) ] [ text organizer.github ] ]
+                    ]
+                , tr [] [ th [] [ text "Slack" ], td [] [ text organizer.elmSlack ] ]
+                ]
             ]
         ]
 

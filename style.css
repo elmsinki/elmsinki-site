@@ -17,6 +17,17 @@
   line-height: 1.5;
 }
 
+@media (max-width:480px) {
+  :root {
+    /* Minor third */
+    --h1: 2.488em;
+    --h2: 2.074em;
+    --h3: 1.728em;
+    --h4: 1.44em;
+    --h5: 1.2em;
+  }
+}
+
 *,
 *::after,
 *::before {
@@ -50,6 +61,7 @@ h2,
 h3,
 h4,
 h5 {
+  font-weight: 600;
   line-height: 1.15;
   margin: 1em 0 0.5em;
 }
@@ -83,5 +95,21 @@ small,
 body {
   max-width: 40em;
   margin: auto;
-  padding: 2em 0;
+  padding: 2em 1em;
+}
+
+.organizers-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.organizer {
+  flex: 1;
+  max-width: 100%;
+}
+
+.organizer-image {
+  max-width: 100%;
 }
