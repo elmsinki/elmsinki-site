@@ -106,7 +106,7 @@ view =
     document
         { title = "Elmsinki - the Helsinki Elm Meetup"
         , content =
-            [ h1 [] [ text "Elmsinki" ] ]
+            [ h1 [ class "headline" ] [ text "Elmsinki" ] ]
                 ++ List.map sectionFromMarkdown [ ingress, missionStatement, codeOfConduct ]
                 ++ [ sectionFromOrganizers ]
         }
@@ -158,7 +158,7 @@ document { title, content } =
             H.node "meta" (List.map (\( key, value ) -> Html.Attributes.attribute key value) pairs) []
     in
     H.node "html"
-        [ lang "EN" ]
+        [ lang "en-us" ]
         [ H.node "head"
             []
             [ meta [ ( "charset", "utf-8" ) ]

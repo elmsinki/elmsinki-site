@@ -1,20 +1,84 @@
+/** Basic browser-default adjustments */
+
+/* Immediately jump any animation to the end point if the user has set their device to "prefers reduced motion". */
+/* This could create bad, unintended consequences. Remove as needed, and write your own appropriate code for prefers-reduced-motion. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}
+
+body {
+  margin: 0; /* Remove the tiny space around the edge of the page */
+}
+
+img,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* Switch display mode to block, since that's what we usually want for images. */
+  vertical-align: middle; /* If you override, and make an image inline, it's likely you'll want middle vertical alignment. */
+}
+
+img,
+video {
+  max-width: 100%; /* Make images and video flexible by default. */
+  height: auto; /* Ensure images and video maintain their aspect ratio when max-width comes into play. */
+}
+
+img {
+  border-style: none; /* Remove the border on images inside links in IE 10 and earlier. */
+}
+
 :root {
-  font-size: 16pt;
+  font-size: 16px;
   --blue-accent: #2965c7;
   --fuchsia-accent: #e03ecf;
   --orange1: #faf4ec;
   --text-color: #2f2e2b;
-  /* Perfect fourth type scale */
-  --h1: 4.209em;
-  --h2: 3.157em;
-  --h3: 2.369em;
-  --h4: 1.777em;
+  /* Perfect fourth type scale (flat after h2) */
+  --h1: 1.777em;
+  --h2: 1.333em;
+  --h3: 1.333em;
+  --h4: 1.333em;
   --h5: 1.333em;
+  --text: 1.25em;
   --small: 0.75em;
   background-color: var(--orange1);
   color: var(--text-color);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.5;
+}
+
+@media screen and (min-width: 34rem) {
+  :root {
+    /* Perfect fourth type scale, one up */
+    --h1: 3.157em;
+    --h2: 2.369em;
+    --h3: 1.777em;
+    --h4: 1.333em;
+    --h5: 1.333em;
+    --text: 1.333em;
+    --small: 0.75em;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  :root {
+    /* Perfect fourth type scale, two up */
+    --h1: 4.209em;
+    --h2: 3.157em;
+    --h3: 2.369em;
+    --h4: 1.777em;
+    --h5: 1.333em;
+    --text: 1.333em;
+    --small: 0.75em;
+  }
 }
 
 @media (max-width:480px) {
@@ -62,7 +126,7 @@ h3,
 h4,
 h5 {
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 1.25;
   margin: 1em 0 0.5em;
 }
 
@@ -87,15 +151,41 @@ h5 {
   font-size: var(--h5);
 }
 
+p {
+  font-size: var(--text);
+}
+
 small,
 .text-small {
   font-size: var(--small);
 }
 
 body {
-  max-width: 40em;
-  margin: auto;
-  padding: 2em 1em;
+  max-width: 48em;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 8rem;
+}
+
+/* Section spacing */
+section + section {
+  margin-top: 4rem;
+}
+
+/* Hyphenation */
+p {
+  hyphens: auto;
+}
+
+/* Inter-line-item spacing */
+li {
+  margin-top: 0.5em;
+}
+
+.headline {
+  margin-top: 4rem;
+  margin-bottom: 8rem;
+  font-weight: 900;
 }
 
 .organizers-list {
