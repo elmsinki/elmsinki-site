@@ -5,13 +5,18 @@
   "devDependencies": {
     "chokidar-cli": "^1.2.2",
     "concurrently": "^4.1.0",
+    "rimraf": "^2.6.3",
     "serve": "^10.1.2",
     "static-html-from-elm": "^1.0.3"
   },
   "scripts": {
-    "dev": "concurrently \"npm:watch\" \"npm:serve\"",
-    "build": "npx static-html-from-elm --config elm-static-html.json",
-    "watch": "chokidar \"src/*.elm\" --command \"npm run build\" --initial",
+    "dev": "npm run build:prepare && npm run build:copy-assets && concurrently \"npm:watch\" \"npm:serve\"",
+    "build": "npm run build:prepare && npm run build:copy-assets && npm run build:styles && npm run build:html",
+    "build:prepare": "rimraf dist/ && mkdir dist",
+    "build:copy-assets": "cp -r asset/ dist/",
+    "build:styles": "cp style.css dist/",
+    "build:html": "npx static-html-from-elm --config elm-static-html.json",
+    "watch": "chokidar \"src/*.elm|style.css\" --command \"npm run build:html && npm run build:styles\" --initial",
     "serve": "serve --listen 8080"
   }
 }
