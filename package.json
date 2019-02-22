@@ -10,13 +10,13 @@
     "static-html-from-elm": "^1.0.3"
   },
   "scripts": {
-    "dev": "npm run build:prepare && npm run build:copy-assets && concurrently \"npm:watch\" \"npm:serve\"",
-    "build": "npm run build:prepare && npm run build:copy-assets && npm run build:styles && npm run build:html",
+    "dev": "yarn run build:prepare && yarn run build:copy-assets && concurrently \"npm:watch\" \"npm:serve\"",
+    "build": "yarn run build:prepare && yarn run build:copy-assets && yarn run build:styles && yarn run build:html",
     "build:prepare": "rimraf dist/ && mkdir dist",
     "build:copy-assets": "cp -r asset/ dist/",
     "build:styles": "cp style.css dist/",
     "build:html": "static-html-from-elm --config elm-static-html.json",
-    "watch": "chokidar \"src/*.elm|style.css\" --command \"npm run build:html && npm run build:styles\" --initial",
+    "watch": "chokidar \"src/*.elm|style.css\" --command \"yarn run build:html && yarn run build:styles\" --initial",
     "serve": "serve --listen 8080"
   }
 }
