@@ -12,12 +12,13 @@
   },
   "scripts": {
     "dev": "yarn run build:prepare && yarn run build:copy-assets && concurrently \"npm:watch\" \"npm:serve\"",
-    "build": "yarn run build:prepare && yarn run build:copy-assets && yarn run build:styles && yarn run build:html",
+    "build": "yarn run build:prepare && yarn run build:copy-assets && yarn run build:code",
     "build:prepare": "rimraf dist/ && mkdir dist",
     "build:copy-assets": "cp -r asset/ dist/",
+    "build:code": "yarn run build:html && yarn run build:styles",
     "build:styles": "cp style.css dist/",
     "build:html": "static-html-from-elm --config elm-static-html.json",
-    "watch": "chokidar \"src/*.elm|style.css\" --command \"yarn run build:html && yarn run build:styles\" --initial",
-    "serve": "serve --listen 8080"
+    "watch": "chokidar \"src/*.elm\" \"style.css\" --command \"yarn run build:code\" --initial",
+    "serve": "serve --listen 8080 dist/"
   }
 }
