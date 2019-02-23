@@ -14,10 +14,16 @@ ingress : Markdown
 ingress =
     Markdown """
 
-Elmsinki is the Helsinki Elm Meetup.
-[Elm](https://elm-lang.org) is a delightful language for building reliable webapps.
+Welcome to the Helsinki Elm Community! We call it Elmsinki — just a silly abbreviation of Elm+Helsinki.
 
-We welcome everyone in the meetups. There is no need to know Elm, we only expect you to be willing to learn!
+Elm is a delightful programming language for building reliable webapps.
+Read more about it on the website: [elm-lang.org](https://elm-lang.org)
+
+We welcome everyone in the community events.
+There is no need to know Elm, we only expect you to be willing to learn!
+
+
+Join the [Meetabit group](https://meetabit.com/communities/helsinki-elm-community-elmsinki) to get notified about events!
 
 """
 
@@ -32,7 +38,7 @@ We want to foster a welcoming and inclusive community of people who like to lear
 
 ### Collaboration
 
-We would like for the meetups to become a nice way to work on your own Elm-related projects in the company of other likeminded people.
+We would like for the events to become a nice way to work on your own Elm-related projects in the company of other likeminded people.
 A space of collaboration, communication, and community. We will still have talks, but those shouldn't be the main focus of the events.
 
 ### Anyone is a speaker
@@ -66,19 +72,21 @@ All attendees, speakers, sponsors, and volunteers at Elmsinki events are require
 
 Elmsinki is dedicated to providing harassment-free community events for everyone, regardless of gender identity,
 sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of
-event participants in any form. Sexual language and imagery is not appropriate for any meetup venue.
+event participants in any form. Sexual language and imagery is not appropriate for any event venue.
 
 Harassment includes offensive verbal comments, sexual images in public spaces, deliberate intimidation, stalking,
 following, harassing photography or recording, sustained disruption of talks or other events, inappropriate physical contact,
 and unwelcome sexual attention. Participants asked to stop any harassing behavior are expected to comply immediately.
 
-If a participant engages in harassing behavior, the meetup organizers may take any action they deem appropriate,
+If a participant engages in harassing behavior, the organizers may take any action they deem appropriate,
 including warning the offender or immediate expulsion from the event. If you are being harassed, notice that someone
 else is being harassed, or have any other concerns, please contact an organizer immediately.
 The organizers will help participants contact security or local law enforcement, provide escorts, or otherwise assist those
 experiencing harassment to feel safe for the duration of the event. We value your attendance.
 
-We expect participants to follow these rules at all meetup venues and other Elmsinki-related social events.
+We expect participants to follow these rules at all event venues and other Elmsinki-related social events.
+
+---
 
 If an incident occurs please use the following contact information.
 
@@ -86,9 +94,9 @@ If an incident occurs please use the following contact information.
 
 **Fotis Papadogeorgopoulos:** [fgpapado@gmail.com](mailto:fgpapado@gmail.com)
 
+---
 
-
-_Adapted from [the Strange Loop Code of Conduct](https://www.thestrangeloop.com/policies.html)._
+_Adapted from the [Strange Loop Code of Conduct](https://www.thestrangeloop.com/policies.html)_
 
 """
 
@@ -115,10 +123,24 @@ view =
     document
         { title = "Elmsinki - the Helsinki Elm Meetup"
         , content =
-            [ h1 [ class "headline" ] [ text "Elmsinki" ] ]
-                ++ List.map sectionFromMarkdown [ ingress, missionStatement, codeOfConduct ]
-                ++ [ sectionFromOrganizers ]
+            [ headerBlock
+            , sectionFromMarkdown ingress
+            , sectionFromOrganizers
+            , sectionFromMarkdown missionStatement
+            , sectionFromMarkdown codeOfConduct
+            ]
         }
+
+
+headerBlock : Html msg
+headerBlock =
+    header []
+        [ div [ class "logo" ] [ decorativeImg [ src "asset/elmsinki.svg" ] ]
+        , div []
+            [ h1 [ class "headline" ] [ text "Elmsinki" ]
+            , h3 [ class "headline-sub" ] [ text "the Helsinki Elm Community" ]
+            ]
+        ]
 
 
 sectionFromOrganizers =
@@ -179,6 +201,8 @@ document { title, content } =
             [ meta [ ( "charset", "utf-8" ) ]
             , meta [ ( "name", "viewport" ), ( "content", "width=device-width, initial-scale=1.0" ) ]
             , H.node "title" [] [ text title ]
+            , H.node "link" [ rel "icon", attr "type" "image/png", attr "sizes" "32x32", href "asset/elmsinki-32x32.png" ] []
+            , H.node "link" [ rel "icon", attr "type" "image/png", attr "sizes" "16x16", href "asset/elmsinki-16x16.png" ] []
             , H.node "link" [ rel "stylesheet", href "style.css" ] []
             ]
         , H.node "body" [] [ main_ [] content ]
