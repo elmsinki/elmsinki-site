@@ -234,7 +234,7 @@ li {
 /* Try a filter hover effect */
 
 .organizer-image:hover {
-  filter: hue-rotate(178deg) brightness(1.05) saturate(300%);
+  filter: hue-rotate(205deg) brightness(1.05) saturate(300%);
 }
 
 .organizer-table {
