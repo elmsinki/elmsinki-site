@@ -81,17 +81,6 @@ img {
   }
 }
 
-@media (max-width: 480px) {
-  :root {
-    /* Minor third */
-    --h1: 2.488em;
-    --h2: 2.074em;
-    --h3: 1.728em;
-    --h4: 1.44em;
-    --h5: 1.2em;
-  }
-}
-
 *,
 *::after,
 *::before {
@@ -151,10 +140,6 @@ h5 {
   font-size: var(--h5);
 }
 
-p {
-  font-size: var(--text);
-}
-
 small,
 .text-small {
   font-size: var(--small);
@@ -164,12 +149,31 @@ body {
   max-width: 48em;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  padding-left: 8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: var(--text);
+}
+
+@media screen and (min-width: 48rem) {
+  body {
+    padding-left: 8rem;
+  }
 }
 
 /* Section spacing */
 section + section {
   margin-top: 4rem;
+}
+
+/* Paragraph spacing */
+/* Let the headings lead */
+p {
+  margin: 0;
+}
+
+/* Set inter-paragraph spacing */
+p + p {
+  margin-top: 1em;
 }
 
 /* Hyphenation */
