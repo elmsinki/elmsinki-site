@@ -30,17 +30,25 @@ missionStatement =
 
 We want to foster a welcoming and inclusive community of people who like to learn Elm, work with Elm or help others learn Elm.
 
-- **Collaboration** We would like for the meetups to become a nice way to work on your own Elm-related projects in the company of other likeminded people.
+### Collaboration
+
+We would like for the meetups to become a nice way to work on your own Elm-related projects in the company of other likeminded people.
 A space of collaboration, communication, and community. We will still have talks, but those shouldn't be the main focus of the events.
-- **Anyone is a speaker** You don't need to present if you don't feel like it. But if you have a hobby project you've been working on,
+
+### Anyone is a speaker
+
+You don't need to present if you don't feel like it. But if you have a hobby project you've been working on,
 or a solution to a specific problem, just bring it up with the organizers and we'll figure out a nice format for you!
-- **Not just traditional talks** It takes a considerable amount of time to prepare and rehearse a traditional talk. We want to keep
+
+### Not just traditional talks
+
+It takes a considerable amount of time to prepare and rehearse a traditional talk. We want to keep
 the barrier of entry as low as possible, and as such, welcome presentations that could be for example:
-    - Show an article/blog post/idea you've come across (e.g. 5 minutes)
-    - Show your code: quickly explain what you've built by showing the end result and a little bit of code
-    - Inverted talk: pull up a chair and have the "panel" in front of you answer tricky questions
-    - Tell what you are working on — in your own words, no slides or preparation necessary
-    - Slide-deck talk — these are welcome too!
+- Show an article/blog post/idea you've come across (e.g. 5 minutes)
+- Show your code: quickly explain what you've built by showing the end result and a little bit of code
+- Inverted talk: pull up a chair and have the "panel" in front of you answer tricky questions
+- Tell what you are working on — in your own words, no slides or preparation necessary
+- Slide-deck talk — these are welcome too!
 
 
 In a nutshell collaboration, coding, and feeling part of a group is the main focus of these events.
