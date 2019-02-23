@@ -97,13 +97,14 @@ organizers =
     [ { name = "Ossi Hanhinen"
       , twitter = "ohanhi"
       , github = "ohanhi"
-      , elmSlack = "ohanhi"
+      , elmSlack = { username = "ohanhi", id = "U0CLDU8UB" }
       , image = "ossi.jpg"
       }
-    , { name = "Fotis Papadogeorgopoulos"
+    , { -- A couple of soft hyphens make layout nicer
+        name = "Fotis Papado\u{00AD}georgo\u{00AD}poulos"
       , twitter = "isfotis"
       , github = "fpapado"
-      , elmSlack = "fpapado"
+      , elmSlack = { username = "fpapado", id = "U2K74H79P" }
       , image = "fotis.jpg"
       }
     ]
@@ -141,7 +142,13 @@ organizerView organizer =
                     [ th [] [ text "GitHub" ]
                     , td [] [ a [ href ("https://github.com/" ++ organizer.github) ] [ text organizer.github ] ]
                     ]
-                , tr [] [ th [] [ text "Slack" ], td [] [ text organizer.elmSlack ] ]
+                , tr []
+                    [ th [] [ text "Slack" ]
+                    , td []
+                        [ a [ href ("https://elmlang.slack.com/team/" ++ organizer.elmSlack.id) ]
+                            [ text organizer.elmSlack.username ]
+                        ]
+                    ]
                 ]
             ]
         ]
