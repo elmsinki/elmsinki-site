@@ -282,6 +282,11 @@ header {
   min-width: 12rem;
 }
 
+/* The organizer is styled like an h4 */
+.organizer-name {
+  font-size: var(--h4);
+}
+
 .organizer-image {
   max-width: 100%;
   border-style: solid;
