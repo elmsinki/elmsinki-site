@@ -138,7 +138,7 @@ headerBlock =
         [ div [ class "logo" ] [ decorativeImg [ src "asset/elmsinki.svg" ] ]
         , div []
             [ h1 [ class "headline" ] [ text "Elmsinki" ]
-            , h3 [ class "headline-sub" ] [ text "the Helsinki Elm Community" ]
+            , p [ class "headline-sub" ] [ text "the Helsinki Elm Community" ]
             ]
         ]
 

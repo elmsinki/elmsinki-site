@@ -257,8 +257,12 @@ header {
   font-weight: 900;
 }
 
+/* The subheading is styled like an h3 */
 .headline-sub {
   margin: 0;
+  font-size: var(--h3);
+  line-height: 1.25;
+  font-weight: 700;
 }
 
 .organizers-list {
@@ -296,6 +300,7 @@ header {
 .organizer-table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 1em;
 }
 
 .organizer-table th,
