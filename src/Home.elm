@@ -196,8 +196,8 @@ sectionFromMarkdown (Markdown mdString) =
         )
 
 
-{-| Add ids to headings of level 2 and 3, to allow linking with '#id' |
-    In the future, we could decide to append an anchor tag here
+{-| Add ids to headings of level 2 and 3, to allow linking with '#id'
+In the future, we could decide to append an anchor tag here
 -}
 withHeadingAnchors : Block b i -> List (Html msg)
 withHeadingAnchors block =
