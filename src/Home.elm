@@ -4,6 +4,8 @@ import Accessibility exposing (..)
 import Html as H
 import Html.Attributes exposing (..)
 import Markdown
+import Markdown.Block as MDBlock exposing (Block(..))
+import Markdown.Inline as MDInline
 
 
 main =
@@ -145,7 +147,7 @@ headerBlock =
 
 sectionFromOrganizers =
     section [ class "organizers" ]
-        [ h2 [] [ text "Organizers" ]
+        [ h2 [ id "organizers" ] [ text "Organizers" ]
         , div [ class "organizers-list" ] (List.map organizerView organizers)
         ]
 
@@ -153,7 +155,7 @@ sectionFromOrganizers =
 organizerView organizer =
     article [ class "organizer" ]
         [ decorativeImg [ src ("asset/" ++ organizer.image), class "organizer-image" ]
-        , h3 [class "organizer-name"] [ text organizer.name ]
+        , h3 [ class "organizer-name" ] [ text organizer.name ]
         , table [ class "organizer-table" ]
             [ tbody []
                 [ tr []
@@ -176,13 +178,54 @@ organizerView organizer =
         ]
 
 
+
+-- Markdown Handling
+
+
 type Markdown
     = Markdown String
 
 
 sectionFromMarkdown : Markdown -> Html msg
 sectionFromMarkdown (Markdown mdString) =
-    section [] (Markdown.toHtml Nothing mdString)
+    section []
+        (mdString
+            |> MDBlock.parse Nothing
+            |> List.map withHeadingAnchors
+            |> List.concat
+        )
+
+
+{-| Add ids to headings of level 2 and 3, to allow linking with '#id' |
+    In the future, we could decide to append an anchor tag here
+-}
+withHeadingAnchors : Block b i -> List (Html msg)
+withHeadingAnchors block =
+    case block of
+        Heading textContent level inlineBlocks ->
+            case level == 2 || level == 3 of
+                True ->
+                    let
+                        headingId =
+                            toId textContent
+
+                        hX =
+                            H.node ("h" ++ String.fromInt level)
+                    in
+                    [ hX [ id headingId ] (List.map MDInline.toHtml inlineBlocks) ]
+
+                False ->
+                    MDBlock.toHtml block
+
+        _ ->
+            MDBlock.toHtml block
+
+
+toId : String -> String
+toId str =
+    str
+        |> String.replace " " "-"
+        |> String.toLower
 
 
 document : { title : String, content : List (Html msg) } -> Html msg
