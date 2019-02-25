@@ -16,16 +16,13 @@ ingress : Markdown
 ingress =
     Markdown """
 
-Welcome to the Helsinki Elm Community! We call it Elmsinki — just a silly abbreviation of Elm+Helsinki.
+Welcome to the Helsinki Elm Community! We call it Elmsinki — a silly abbreviation of Elm and Helsinki.
+We welcome everyone in the community events. There is no need to know Elm, we only expect you to be willing to learn!
+
+Join the [Meetabit group](https://meetabit.com/communities/helsinki-elm-community-elmsinki) to get notified about events!
 
 Elm is a delightful programming language for building reliable webapps.
 Read more about it on the website: [elm-lang.org](https://elm-lang.org)
-
-We welcome everyone in the community events.
-There is no need to know Elm, we only expect you to be willing to learn!
-
-
-Join the [Meetabit group](https://meetabit.com/communities/helsinki-elm-community-elmsinki) to get notified about events!
 
 """
 
