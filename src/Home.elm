@@ -153,7 +153,7 @@ sectionFromOrganizers =
 
 
 organizerView organizer =
-    article [ class "organizer" ]
+    section [ class "organizer" ]
         [ decorativeImg [ src ("asset/" ++ organizer.image), class "organizer-image" ]
         , h3 [ class "organizer-name" ] [ text organizer.name ]
         , table [ class "organizer-table" ]
