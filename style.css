@@ -65,6 +65,10 @@ img {
   line-height: 1.5;
 }
 
+header {
+  margin: 0 0 4rem;
+}
+
 @media screen and (min-width: 34rem) {
   :root {
     /* Perfect fourth type scale, one up */
@@ -79,6 +83,8 @@ img {
   header {
     display: flex;
     justify-content: flex-start;
+    margin-top: 4rem;
+    margin-bottom: 8rem;
   }
 }
 
@@ -92,6 +98,10 @@ img {
     --h5: 1.333em;
     --text: 1.333em;
     --small: 0.75em;
+  }
+  header {
+    margin-top: 6rem;
+    margin-bottom: 10rem;
   }
 }
 
@@ -229,7 +239,6 @@ li {
 }
 
 header {
-  margin: 0 0 4rem;
   overflow: hidden;
 }
 
@@ -241,12 +250,10 @@ header {
   min-width: 8rem;
   max-width: 10rem;
   margin-bottom: 1rem;
+  padding-right: 2rem;
 }
 
 @media screen and (min-width: 56rem) {
-  header {
-    margin-top: 4rem;
-  }
   .logo {
     margin: 0;
   }
@@ -258,6 +265,7 @@ header {
 }
 
 /* The subheading is styled like an h3 */
+
 .headline-sub {
   margin: 0;
   font-size: var(--h3);
@@ -282,6 +290,7 @@ header {
 }
 
 /* The organizer is styled like an h4 */
+
 .organizer-name {
   font-size: var(--h5);
 }
