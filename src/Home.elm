@@ -93,10 +93,6 @@ If an incident occurs please use the following contact information.
 
 **Fotis Papadogeorgopoulos:** [fgpapado@gmail.com](mailto:fgpapado@gmail.com)
 
----
-
-_Adapted from the [Strange Loop Code of Conduct](https://www.thestrangeloop.com/policies.html)_
-
 """
 
 
@@ -127,6 +123,7 @@ view =
             , sectionFromOrganizers
             , sectionFromMarkdown missionStatement
             , sectionFromMarkdown codeOfConduct
+            , footerBlock
             ]
         }
 
@@ -138,6 +135,21 @@ headerBlock =
         , div []
             [ h1 [ class "headline" ] [ text "Elmsinki" ]
             , p [ class "headline-sub" ] [ text "the Helsinki Elm Community" ]
+            ]
+        ]
+
+
+footerBlock : Html msg
+footerBlock =
+    footer []
+        [ h3 [ id "thanks" ] [ text "Thanks ♥" ]
+        , p []
+            [ text "Code of Conduct adapted from "
+            , a [ href "https://www.thestrangeloop.com/policies.html" ] [ text "Strange Loop" ]
+            ]
+        , p []
+            [ text "Domain name sponsored by "
+            , a [ href "https://www.futurice.com/" ] [ text "Futurice" ]
             ]
         ]
 

@@ -326,3 +326,8 @@ header {
   /* This will make the column as narrow as it can be */
   width: 1em;
 }
+
+footer {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
