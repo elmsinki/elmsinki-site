@@ -35,3 +35,4 @@ The site is automatically deployed with [Netlify](https://netlify.com).
 
 ## License
 
+[BSD 3-clause](LICENSE)
